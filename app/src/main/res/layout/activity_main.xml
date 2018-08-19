@@ -1,18 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="@color/tan_background"
+    android:orientation="vertical">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/alphabet"
+        style="@style/category"
+        android:layout_width="match_parent"
+        android:background="@color/category_alphabets"
+        android:text="@string/category_alphabet" />
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/numbers"
+        style="@style/category"
+        android:layout_width="match_parent"
+        android:background="@color/category_numbers"
+        android:text="@string/category_number" />
+
+    <TextView
+        android:id="@+id/phrases"
+        style="@style/category"
+        android:layout_width="match_parent"
+        android:background="@color/category_phrases"
+        android:text="@string/category_phrases" />
+
+    <TextView
+        android:id="@+id/rhymes"
+        style="@style/category"
+        android:layout_width="match_parent"
+        android:background="@color/category_rhymes"
+        android:text="@string/category_rhymes" />
+
+
+</LinearLayout>

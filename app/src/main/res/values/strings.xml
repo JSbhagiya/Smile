@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Smile</string>
+    <string name="category_alphabet">Alphabet</string>
+    <string name="category_number">Numbers</string>
+    <string name="category_phrases">Phrases</string>
+    <string name="category_rhymes">Rhymes</string>
 </resources>
