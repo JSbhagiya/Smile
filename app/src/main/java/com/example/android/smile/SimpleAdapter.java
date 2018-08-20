@@ -14,9 +14,9 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class wordAdapter extends ArrayAdapter<word>{
+public class SimpleAdapter extends ArrayAdapter<word>{
 
-    public wordAdapter(Activity context, ArrayList<word> words)
+    public SimpleAdapter(Activity context, ArrayList<word> words)
     {
         super(context,0,words);
     }
@@ -29,20 +29,15 @@ public class wordAdapter extends ArrayAdapter<word>{
         if(listItemView==null)
         {
             listItemView = LayoutInflater.from(getContext()).inflate(
-                    R.layout.list_element, parent, false);
+                    R.layout.simple_list_element, parent, false);
         }
 
         word current= getItem(position);
         TextView text=(TextView)listItemView.findViewById(R.id.text);
-        ImageView image=(ImageView)listItemView.findViewById(R.id.image);
 
         text.setText(current.getText());
-        if (current.hasimage()) {
-            image.setImageResource(current.getImageid());
-            image.setVisibility(View.VISIBLE);
-        } else {
-            image.setVisibility(View.GONE);
-        }
+
+
 
 
 

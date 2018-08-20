@@ -2,7 +2,7 @@ package com.example.android.smile;
 
 public class word
 {
-    int imageid;
+    int imageid=-1;
     String text;
 
     public word(){}
@@ -11,6 +11,10 @@ public class word
     {
         this.text=text;
         this.imageid=imageid;
+    }
+    public word(String text)
+    {
+        this.text=text;
     }
 
     public void setImageid(int id){imageid=id;}
@@ -23,5 +27,17 @@ public class word
 
     public int getImageid() {
         return imageid;
+    }
+
+    public boolean hasimage()
+    {
+        if(imageid==-1)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
     }
 }
