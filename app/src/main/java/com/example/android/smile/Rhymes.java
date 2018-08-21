@@ -25,7 +25,7 @@ public class Rhymes extends AppCompatActivity {
         rhymeslist.add(new word("Here we go around"));
         rhymeslist.add(new word("Jack and Jill"));
 
-        SimpleAdapter adapter = new SimpleAdapter(this,rhymeslist);
+        SimpleAdapter adapter = new SimpleAdapter(this,rhymeslist,R.color.category_rhymes);
         ListView list= (ListView)findViewById(R.id.simple_list);
         list.setAdapter(adapter);
     }

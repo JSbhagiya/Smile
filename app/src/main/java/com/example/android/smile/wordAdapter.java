@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,9 +17,12 @@ import java.util.ArrayList;
 
 public class wordAdapter extends ArrayAdapter<word>{
 
-    public wordAdapter(Activity context, ArrayList<word> words)
+    int colorid;
+
+    public wordAdapter(Activity context, ArrayList<word> words,int colorid)
     {
         super(context,0,words);
+        this.colorid=colorid;
     }
 
     @NonNull
@@ -47,7 +51,8 @@ public class wordAdapter extends ArrayAdapter<word>{
 
 
 
-
+        int actualcolor= ContextCompat.getColor(getContext(),colorid);
+        listItemView.setBackgroundColor(actualcolor);
         return listItemView;
     }
 }
