@@ -5,6 +5,7 @@ public class word
     int imageid=-1;
     String text;
     int audioid=-1;
+    String videoid;
 
 
     public word(){}
@@ -21,12 +22,13 @@ public class word
         this.text=text;
         this.audioid=audioid;
     }
-    public word(String text) {
+    public word(String text,String videoid) {
         this.text = text;
+        this.videoid=videoid;
     }
     public void setImageid(int id){imageid=id;}
 
-    public void setText(String text){this.text=text;}
+    public void setText(String text){this.text=text; }
 
     public String getText() {
         return text;
@@ -35,6 +37,8 @@ public class word
     public int getImageid() {
         return imageid;
     }
+
+    public String getvideoid() {return videoid;}
 
     public boolean hasimage()
     {
