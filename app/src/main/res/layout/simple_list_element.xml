@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="88dp"
+    android:layout_height="60dp"
     android:background="#ffffff">
 
     <TextView
@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginLeft="10dp"
-        android:gravity="center_vertical"
-        tools:text="hello"
-        android:textSize="40sp"/>
+        android:gravity="bottom"
+        tools:text="London Bridege is falling down"
+        android:textSize="20sp"/>
 </LinearLayout>

@@ -12,7 +12,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         tools:text="Three"
-        android:textSize="40sp"/>
+        android:textSize="20sp"/>
 
     <ImageView
         android:id="@+id/image"

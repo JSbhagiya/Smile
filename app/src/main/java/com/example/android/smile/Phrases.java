@@ -20,6 +20,11 @@ public class Phrases extends AppCompatActivity {
         phrases.add(new word("I had a great day"));
         phrases.add(new word("Have a nice day"));
         phrases.add(new word("ThankYou"));
+        phrases.add(new word("Excuse me."));
+        phrases.add(new word("I am Sorry."));
+        phrases.add(new word("Where are you from?"));
+        phrases.add(new word("I am learning English"));
+        phrases.add(new word("Nice to meet you"));
 
         SimpleAdapter adapter= new SimpleAdapter(this,phrases);
         ListView list= findViewById(R.id.simple_list);
