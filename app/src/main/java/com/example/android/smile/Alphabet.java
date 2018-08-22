@@ -11,6 +11,23 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 public class Alphabet extends AppCompatActivity {
+    private MediaPlayer mediaPlayer;
+    private class CompletionListener implements MediaPlayer.OnCompletionListener
+    {
+        @Override
+        public void onCompletion(MediaPlayer mediaPlayer) {
+            releaseMediaPlayer();
+        }
+    }
+
+    private void releaseMediaPlayer()
+    {
+        if(mediaPlayer!=null)
+        {
+            mediaPlayer.release();
+            mediaPlayer=null;
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +71,9 @@ public class Alphabet extends AppCompatActivity {
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(),alphabet.get(i).getAudioid());
+                releaseMediaPlayer();
+                mediaPlayer = MediaPlayer.create(getApplicationContext(),alphabet.get(i).getAudioid());
+                mediaPlayer.setOnCompletionListener(new CompletionListener());
                 mediaPlayer.start();
             }
         });

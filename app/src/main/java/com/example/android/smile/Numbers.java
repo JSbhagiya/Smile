@@ -10,6 +10,24 @@ import android.widget.GridView;
 import java.util.ArrayList;
 
 public class Numbers extends AppCompatActivity {
+    private MediaPlayer mediaPlayer;
+
+    private class CompletionListener implements MediaPlayer.OnCompletionListener
+    {
+        @Override
+        public void onCompletion(MediaPlayer mediaPlayer) {
+            releaseMediaPlayer();
+        }
+    }
+
+    private void releaseMediaPlayer()
+    {
+        if(mediaPlayer!=null)
+        {
+            mediaPlayer.release();
+            mediaPlayer=null;
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +55,9 @@ public class Numbers extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l)
             {
-                MediaPlayer mediaPlayer= MediaPlayer.create(getApplicationContext(),numbers.get(i).getAudioid());
+                releaseMediaPlayer();
+                mediaPlayer= MediaPlayer.create(getApplicationContext(),numbers.get(i).getAudioid());
+                mediaPlayer.setOnCompletionListener(new CompletionListener());
                 mediaPlayer.start();
 
             }
