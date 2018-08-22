@@ -1,7 +1,10 @@
 package com.example.android.smile;
 
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 
 import java.util.ArrayList;
@@ -13,7 +16,7 @@ public class Numbers extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list);
 
-        ArrayList <word> numbers = new ArrayList<word>();
+       final  ArrayList <word> numbers = new ArrayList<word>();
         numbers.add(new word("Zero",R.drawable.zero,R.raw.zero));
         numbers.add(new word("One",R.drawable.one,R.raw.one));
         numbers.add(new word("Two",R.drawable.two,R.raw.two));
@@ -29,6 +32,16 @@ public class Numbers extends AppCompatActivity {
         wordAdapter adapter= new wordAdapter(this,numbers,R.color.category_numbers);
         GridView list= (GridView)findViewById(R.id.gridview);
         list.setAdapter(adapter);
+
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l)
+            {
+                MediaPlayer mediaPlayer= MediaPlayer.create(getApplicationContext(),numbers.get(i).getAudioid());
+                mediaPlayer.start();
+
+            }
+        });
 
     }
 }

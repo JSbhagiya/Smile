@@ -1,7 +1,10 @@
 package com.example.android.smile;
 
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -14,7 +17,7 @@ public class Phrases extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.simplelist);
 
-        ArrayList<word> phrases= new ArrayList<word>();
+        final ArrayList<word> phrases= new ArrayList<word>();
         phrases.add(new word("Good Morning",R.raw.good_morning));
         phrases.add(new word("How are you?",R.raw.how_are_you));
         phrases.add(new word("I had a great day",R.raw.i_had_a_great_day));
@@ -29,5 +32,13 @@ public class Phrases extends AppCompatActivity {
         SimpleAdapter adapter= new SimpleAdapter(this,phrases,R.color.category_phrases);
         ListView list= findViewById(R.id.simple_list);
         list.setAdapter(adapter);
+
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                MediaPlayer mediaplayer = MediaPlayer.create(getApplicationContext(),phrases.get(i).getAudioid());
+                mediaplayer.start();
+            }
+        });
     }
 }

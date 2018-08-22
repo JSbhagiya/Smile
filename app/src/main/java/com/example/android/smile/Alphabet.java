@@ -1,8 +1,10 @@
 package com.example.android.smile;
 
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ListView;
 
@@ -15,7 +17,7 @@ public class Alphabet extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list);
 
-        ArrayList<word> alphabet= new ArrayList<word>();
+        final ArrayList<word> alphabet= new ArrayList<word>();
 
         alphabet.add(new word("A",R.drawable.a,R.raw.a));
         alphabet.add(new word("B",R.drawable.b,R.raw.b));
@@ -48,6 +50,14 @@ public class Alphabet extends AppCompatActivity {
         GridView list= (GridView) findViewById(R.id.gridview);
         wordAdapter adapter = new wordAdapter(this,alphabet,R.color.category_alphabets);
         list.setAdapter(adapter);
+
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(),alphabet.get(i).getAudioid());
+                mediaPlayer.start();
+            }
+        });
     }
 
 }
