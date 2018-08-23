@@ -80,11 +80,11 @@ public class PhrasesFragment extends Fragment {
         phrases.add(new word("I had a great day", R.raw.i_had_a_great_day));
         phrases.add(new word("Have a nice day", R.raw.have_a_nice_day));
         phrases.add(new word("ThankYou", R.raw.thank_you));
-        phrases.add(new word("Excuse me.", R.raw.thank_you));
-        phrases.add(new word("I am Sorry.", R.raw.thank_you));
-        phrases.add(new word("Where are you from?", R.raw.thank_you));
-        phrases.add(new word("I am learning English", R.raw.thank_you));
-        phrases.add(new word("Nice to meet you", R.raw.thank_you));
+        phrases.add(new word("Excuse me.", R.raw.excuse_me));
+        phrases.add(new word("I am Sorry.", R.raw.i_am_sorry));
+        phrases.add(new word("Where are you from?", R.raw.where_are_you_from));
+        phrases.add(new word("I am learning English", R.raw.i_am_learning_english));
+        phrases.add(new word("Nice to meet you", R.raw.nice_to_meet_you));
 
         SimpleAdapter adapter = new SimpleAdapter(getActivity(), phrases, R.color.category_phrases);
         ListView list = rootView.findViewById(R.id.simple_list);
