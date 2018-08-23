@@ -12,7 +12,9 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         tools:text="Three"
-        android:textSize="20sp"/>
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginLeft="20dp"/>
 
     <ImageView
         android:id="@+id/image"

@@ -8,4 +8,6 @@
     <color name="category_rhymes">#F48FB1</color>
     <color name="category_phrases">#FFAB91</color>
     <color name="tan_background">#FFF7DA</color>
+    <color name="primary_color">#4A312A</color>
+    <color name="primary_dark_color">#2F1D1A</color>
 </resources>

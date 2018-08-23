@@ -106,7 +106,7 @@ public class AlphabetFragment extends Fragment {
 
 
         GridView list = (GridView) rootView.findViewById(R.id.gridview);
-        wordAdapter adapter = new wordAdapter(getActivity(), alphabet, R.color.category_alphabets);
+        wordAdapter adapter = new wordAdapter(getActivity(), alphabet, R.color.category_alphabets,30);
         list.setAdapter(adapter);
 
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {

@@ -18,11 +18,13 @@ import java.util.ArrayList;
 public class wordAdapter extends ArrayAdapter<word>{
 
     int colorid;
+    int size;
 
-    public wordAdapter(Activity context, ArrayList<word> words,int colorid)
+    public wordAdapter(Activity context, ArrayList<word> words,int colorid,int size)
     {
         super(context,0,words);
         this.colorid=colorid;
+        this.size=size;
     }
 
     @NonNull
@@ -41,6 +43,8 @@ public class wordAdapter extends ArrayAdapter<word>{
         ImageView image=(ImageView)listItemView.findViewById(R.id.image);
 
         text.setText(current.getText());
+        text.setTextSize(size);
+
         if (current.hasimage()) {
             image.setImageResource(current.getImageid());
             image.setVisibility(View.VISIBLE);

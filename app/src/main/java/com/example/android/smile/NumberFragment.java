@@ -88,7 +88,7 @@ public class NumberFragment extends Fragment {
         numbers.add(new word("Nine", R.drawable.nine, R.raw.nine));
 
 
-        wordAdapter adapter = new wordAdapter(getActivity(), numbers, R.color.category_numbers);
+        wordAdapter adapter = new wordAdapter(getActivity(), numbers, R.color.category_numbers,20);
         GridView list = (GridView) rootView.findViewById(R.id.gridview);
         list.setAdapter(adapter);
 
